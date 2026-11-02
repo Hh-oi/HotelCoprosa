@@ -16,7 +16,7 @@
     <meta property="og:url" content="https://hh-oi.github.io/HotelCoprosa/">
     <meta property="og:title" content="Hotel Coprosa Ltda. - Vidas que trabajan para la vida">
     <meta property="og:description" content="Habitaciones desde Gs. 130.000 con desayuno incluido. Reserva directamente por WhatsApp.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:image" content="habitacion.png">
 
     <!-- 8. Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23c59b27'/><text y='70' x='20' fill='white' font-size='70' font-family='serif' font-weight='bold'>C</text></svg>">
@@ -63,28 +63,30 @@
     </script>
     <style>
         html { scroll-behavior: smooth; }
+        /* Fondo Adaptable a Móvil, Tablet y Escritorio con habitacion.png */
         .hero-bg {
-            background-image: linear-gradient(rgba(9, 13, 22, 0.78), rgba(9, 13, 22, 0.85)), url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1600&q=80');
+            background-image: linear-gradient(rgba(9, 13, 22, 0.72), rgba(9, 13, 22, 0.82)), url('habitacion.png');
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
         }
     </style>
 </head>
 <body class="font-sans text-gray-800 bg-gray-50 flex flex-col min-h-screen">
 
-    <!-- NAV BAR (14. Responsive Móvil) -->
+    <!-- NAV BAR RESPONSIVO -->
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <a href="#" class="flex items-center gap-3 group">
                     <div class="w-10 h-10 rounded-lg bg-brand-500 text-white flex items-center justify-center font-serif text-xl font-bold shadow-md">C</div>
                     <div class="flex flex-col">
-                        <span class="font-serif text-xl font-bold text-navy-900">Hotel Coprosa <span class="text-xs font-sans text-gray-500">Ltda.</span></span>
-                        <span class="text-[10px] tracking-widest text-brand-600 uppercase font-semibold">Vidas que trabajan para la vida</span>
+                        <span class="font-serif text-lg sm:text-xl font-bold text-navy-900">Hotel Coprosa <span class="text-xs font-sans text-gray-500">Ltda.</span></span>
+                        <span class="text-[9px] sm:text-[10px] tracking-widest text-brand-600 uppercase font-semibold">Vidas que trabajan para la vida</span>
                     </div>
                 </a>
 
-                <nav class="hidden md:flex items-center space-x-8 font-medium text-sm text-gray-600">
+                <nav class="hidden md:flex items-center space-x-6 lg:space-x-8 font-medium text-sm text-gray-600">
                     <a href="#inicio" class="hover:text-brand-600 transition">Inicio</a>
                     <a href="#tarifas" class="hover:text-brand-600 transition">Tarifas</a>
                     <a href="#habitaciones" class="hover:text-brand-600 transition">Habitaciones</a>
@@ -92,140 +94,139 @@
                     <a href="#contacto" class="hover:text-brand-600 transition">Contacto</a>
                 </nav>
 
-                <!-- 20. CTA Claro -->
-                <div class="hidden md:flex items-center gap-4">
+                <div class="hidden md:flex items-center gap-3 lg:gap-4">
                     <a href="https://wa.me/595981353081?text=Hola,%20quisiera%20consultar%20sobre%20disponibilidad" target="_blank" class="flex items-center gap-2 text-xs font-bold text-green-700 bg-green-50 hover:bg-green-100 px-3 py-2 rounded-lg transition">
-                        <i class="fab fa-whatsapp text-base"></i> 0981 353 081
+                        <i class="fab fa-whatsapp text-base"></i> <span class="hidden lg:inline">0981 353 081</span>
                     </a>
-                    <a href="#tarifas" class="bg-brand-500 hover:bg-brand-600 text-white font-semibold text-sm px-5 py-2.5 rounded-lg shadow transition">
+                    <a href="#tarifas" class="bg-brand-500 hover:bg-brand-600 text-white font-semibold text-xs sm:text-sm px-4 py-2.5 rounded-lg shadow transition">
                         Reserva Ahora
                     </a>
                 </div>
 
-                <button id="mobile-menu-btn" class="md:hidden text-gray-700 p-2" aria-label="Abrir menú">
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700 p-2 focus:outline-none" aria-label="Abrir menú">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
         </div>
 
         <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200 px-4 pt-2 pb-6 space-y-3">
-            <a href="#inicio" class="block text-gray-700 py-2 border-b">Inicio</a>
-            <a href="#tarifas" class="block text-gray-700 py-2 border-b">Tarifas</a>
-            <a href="#habitaciones" class="block text-gray-700 py-2 border-b">Habitaciones</a>
-            <a href="#servicios" class="block text-gray-700 py-2 border-b">Servicios</a>
-            <a href="#contacto" class="block text-gray-700 py-2">Contacto</a>
-            <a href="https://wa.me/595981353081?text=Hola,%20deseo%20reservar" target="_blank" class="w-full text-center bg-green-600 text-white font-semibold py-2.5 rounded-lg block"><i class="fab fa-whatsapp"></i> Reservar por WhatsApp</a>
+            <a href="#inicio" onclick="closeMobileMenu()" class="block text-gray-700 py-2 border-b text-sm">Inicio</a>
+            <a href="#tarifas" onclick="closeMobileMenu()" class="block text-gray-700 py-2 border-b text-sm">Tarifas</a>
+            <a href="#habitaciones" onclick="closeMobileMenu()" class="block text-gray-700 py-2 border-b text-sm">Habitaciones</a>
+            <a href="#servicios" onclick="closeMobileMenu()" class="block text-gray-700 py-2 border-b text-sm">Servicios</a>
+            <a href="#contacto" onclick="closeMobileMenu()" class="block text-gray-700 py-2 text-sm">Contacto</a>
+            <a href="https://wa.me/595981353081?text=Hola,%20deseo%20reservar" target="_blank" class="w-full text-center bg-green-600 text-white font-semibold py-2.5 rounded-lg block text-sm"><i class="fab fa-whatsapp"></i> Reservar por WhatsApp</a>
         </div>
     </header>
 
     <!-- HERO SECTION -->
-    <section id="inicio" class="hero-bg text-white py-24 lg:py-32 flex items-center min-h-[80vh]">
+    <section id="inicio" class="hero-bg text-white py-16 sm:py-24 lg:py-32 flex items-center min-h-[75vh] lg:min-h-[85vh]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div class="max-w-3xl">
-                <span class="inline-block bg-brand-500/90 text-white text-xs font-semibold px-3.5 py-1.5 rounded-full uppercase tracking-widest mb-4">
+                <span class="inline-block bg-brand-500/90 text-white text-[11px] sm:text-xs font-semibold px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full uppercase tracking-widest mb-4">
                     Tu descanso, nuestra prioridad
                 </span>
-                <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6">
                     Hotel Coprosa Ltda.
                 </h1>
-                <p class="text-lg text-gray-200 mb-8 font-light">
-                    Confort, hospitalidad y la mejor atención en Repatriación. Disfruta de una experiencia inolvidable con desayuno incluido y estacionamiento seguro.
+                <p class="text-sm sm:text-lg text-gray-200 mb-6 sm:mb-8 font-light max-w-2xl">
+                    Confort, hospitalidad y la mejor atención en Repatriación. Disfruta de una experiencia inolvidable con habitaciones equipadas, aire acondicionado, desayuno incluido y estacionamiento seguro.
                 </p>
-                <!-- 20. CTA Claro -->
-                <div class="flex flex-wrap gap-4">
-                    <a href="#tarifas" class="bg-brand-500 hover:bg-brand-600 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition">
+                <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                    <a href="#tarifas" class="w-full sm:w-auto text-center bg-brand-500 hover:bg-brand-600 text-white font-semibold px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl shadow-lg transition text-sm sm:text-base">
                         Ver Promoción Especial
                     </a>
-                    <a href="https://wa.me/595981353081?text=Hola,%20deseo%20consultar%20tarifas" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg flex items-center gap-2 transition">
-                        <i class="fab fa-whatsapp text-xl"></i> Contactar al 0981 353 081
+                    <a href="https://wa.me/595981353081?text=Hola,%20deseo%20consultar%20tarifas" target="_blank" class="w-full sm:w-auto text-center bg-green-600 hover:bg-green-700 text-white font-semibold px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl shadow-lg flex items-center justify-center gap-2 transition text-sm sm:text-base">
+                        <i class="fab fa-whatsapp text-lg sm:text-xl"></i> Contactar al 0981 353 081
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- TARIFAS (13. Contraste de Color) -->
-    <section id="tarifas" class="py-20 bg-white">
+    <!-- TARIFAS -->
+    <section id="tarifas" class="py-12 sm:py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="bg-brand-100 text-brand-700 font-bold text-xs uppercase px-3 py-1 rounded-full tracking-widest">¡Desayuno Incluido!</span>
-                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900 mt-3">Promoción Especial de Tarifas</h2>
-                <div class="w-16 h-1 bg-brand-500 mx-auto mt-4 rounded-full"></div>
+            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
+                <span class="bg-brand-100 text-brand-700 font-bold text-[10px] sm:text-xs uppercase px-3 py-1 rounded-full tracking-widest">¡Desayuno Incluido!</span>
+                <h2 class="font-serif text-2xl sm:text-4xl font-bold text-navy-900 mt-3">Promoción Especial de Tarifas</h2>
+                <div class="w-16 h-1 bg-brand-500 mx-auto mt-3 rounded-full"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- 1 Persona -->
-                <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 text-center shadow-sm">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition">
                     <div class="w-12 h-12 bg-brand-100 text-brand-600 rounded-full flex items-center justify-center mx-auto mb-4 text-xl"><i class="fas fa-user"></i></div>
-                    <h3 class="font-bold text-navy-900 text-lg mb-2">1 Persona</h3>
-                    <div class="text-2xl font-bold text-brand-600 mb-4">Gs. 130.000</div>
+                    <h3 class="font-bold text-navy-900 text-lg mb-1">1 Persona</h3>
+                    <div class="text-2xl font-bold text-brand-600 mb-3">Gs. 130.000</div>
                     <p class="text-xs text-gray-500 mb-6">Por noche con desayuno incluido.</p>
-                    <button onclick="openBookingModal('Tarifa 1 Persona', 'Gs. 130.000')" class="w-full bg-navy-900 hover:bg-brand-500 text-white font-semibold text-xs py-2.5 rounded-lg transition">Reservar</button>
+                    <button onclick="openBookingModal('Tarifa 1 Persona', 'Gs. 130.000')" class="w-full bg-navy-900 hover:bg-brand-500 text-white font-semibold text-xs py-3 rounded-lg transition">Reservar</button>
                 </div>
 
-                <!-- 2 Personas -->
-                <div class="bg-brand-50 border-2 border-brand-500 rounded-2xl p-6 text-center shadow-md relative">
+                <div class="bg-brand-50 border-2 border-brand-500 rounded-2xl p-6 text-center shadow-md relative hover:shadow-lg transition">
                     <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-500 text-white text-[10px] uppercase font-bold px-3 py-1 rounded-full">Popular</span>
                     <div class="w-12 h-12 bg-brand-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl"><i class="fas fa-user-friends"></i></div>
-                    <h3 class="font-bold text-navy-900 text-lg mb-2">2 Personas</h3>
-                    <div class="text-2xl font-bold text-brand-600 mb-4">Gs. 180.000</div>
+                    <h3 class="font-bold text-navy-900 text-lg mb-1">2 Personas</h3>
+                    <div class="text-2xl font-bold text-brand-600 mb-3">Gs. 180.000</div>
                     <p class="text-xs text-gray-500 mb-6">Ideal para parejas o viajes de trabajo.</p>
-                    <button onclick="openBookingModal('Tarifa 2 Personas', 'Gs. 180.000')" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-semibold text-xs py-2.5 rounded-lg transition">Reservar</button>
+                    <button onclick="openBookingModal('Tarifa 2 Personas', 'Gs. 180.000')" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-semibold text-xs py-3 rounded-lg transition">Reservar</button>
                 </div>
 
-                <!-- 3 Personas -->
-                <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 text-center shadow-sm">
+                <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition">
                     <div class="w-12 h-12 bg-brand-100 text-brand-600 rounded-full flex items-center justify-center mx-auto mb-4 text-xl"><i class="fas fa-users"></i></div>
-                    <h3 class="font-bold text-navy-900 text-lg mb-2">3 Personas</h3>
-                    <div class="text-2xl font-bold text-brand-600 mb-4">Gs. 230.000</div>
+                    <h3 class="font-bold text-navy-900 text-lg mb-1">3 Personas</h3>
+                    <div class="text-2xl font-bold text-brand-600 mb-3">Gs. 230.000</div>
                     <p class="text-xs text-gray-500 mb-6">Comodidad para pequeños grupos.</p>
-                    <button onclick="openBookingModal('Tarifa 3 Personas', 'Gs. 230.000')" class="w-full bg-navy-900 hover:bg-brand-500 text-white font-semibold text-xs py-2.5 rounded-lg transition">Reservar</button>
+                    <button onclick="openBookingModal('Tarifa 3 Personas', 'Gs. 230.000')" class="w-full bg-navy-900 hover:bg-brand-500 text-white font-semibold text-xs py-3 rounded-lg transition">Reservar</button>
                 </div>
 
-                <!-- 4 Personas -->
-                <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 text-center shadow-sm">
+                <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition">
                     <div class="w-12 h-12 bg-brand-100 text-brand-600 rounded-full flex items-center justify-center mx-auto mb-4 text-xl"><i class="fas fa-users-rectangle"></i></div>
-                    <h3 class="font-bold text-navy-900 text-lg mb-2">4 Personas</h3>
-                    <div class="text-2xl font-bold text-brand-600 mb-4">Gs. 300.000</div>
+                    <h3 class="font-bold text-navy-900 text-lg mb-1">4 Personas</h3>
+                    <div class="text-2xl font-bold text-brand-600 mb-3">Gs. 300.000</div>
                     <p class="text-xs text-gray-500 mb-6">Espacio familiar completo.</p>
-                    <button onclick="openBookingModal('Tarifa 4 Personas', 'Gs. 300.000')" class="w-full bg-navy-900 hover:bg-brand-500 text-white font-semibold text-xs py-2.5 rounded-lg transition">Reservar</button>
+                    <button onclick="openBookingModal('Tarifa 4 Personas', 'Gs. 300.000')" class="w-full bg-navy-900 hover:bg-brand-500 text-white font-semibold text-xs py-3 rounded-lg transition">Reservar</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- HABITACIONES (10. Imágenes ALT + 11. Comprimir IMGs) -->
-    <section id="habitaciones" class="py-20 bg-gray-50">
+    <!-- HABITACIONES (Con habitacion.png) -->
+    <section id="habitaciones" class="py-12 sm:py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="text-brand-600 font-bold text-xs uppercase tracking-widest">Nuestras Instalaciones</span>
-                <h2 class="font-serif text-3xl font-bold text-navy-900 mt-2">Habitaciones Cómodas y Modernas</h2>
-                <div class="w-16 h-1 bg-brand-500 mx-auto mt-4 rounded-full"></div>
+            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+                <span class="text-brand-600 font-bold text-[10px] sm:text-xs uppercase tracking-widest">Nuestras Instalaciones Reales</span>
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-navy-900 mt-2">Habitaciones Cómodas y Climatizadas</h2>
+                <div class="w-16 h-1 bg-brand-500 mx-auto mt-3 rounded-full"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
-                    <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=80" alt="Habitación Clásica del Hotel Coprosa Ltda. en Repatriación" class="w-full h-56 object-cover" loading="lazy">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <img src="habitacion.png" alt="Habitación Doble Real del Hotel Coprosa Ltda. en Repatriación" class="w-full h-56 object-cover" loading="lazy">
                     <div class="p-6">
-                        <h3 class="font-serif text-xl font-bold text-navy-900 mb-2">Habitación Individual / Doble</h3>
-                        <p class="text-gray-500 text-sm mb-4">Climatización, ropa de cama premium y excelente iluminación.</p>
-                        <button onclick="openBookingModal('Habitación Clásica', 'Gs. 130.000')" class="w-full bg-navy-900 hover:bg-brand-500 text-white py-2.5 rounded-lg font-semibold text-xs transition">Consultar</button>
+                        <span class="text-[10px] font-bold text-brand-600 uppercase tracking-widest">Foto Real</span>
+                        <h3 class="font-serif text-lg sm:text-xl font-bold text-navy-900 mb-2 mt-1">Habitación Doble / Confort</h3>
+                        <p class="text-gray-500 text-xs sm:text-sm mb-4">Equipada con aire acondicionado split, dos camas, cortinas blackout y excelente iluminación natural.</p>
+                        <button onclick="openBookingModal('Habitación Doble Real', 'Gs. 180.000')" class="w-full bg-navy-900 hover:bg-brand-500 text-white py-2.5 rounded-lg font-semibold text-xs transition">Consultar Reserva</button>
                     </div>
                 </div>
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
-                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80" alt="Suite Confort del Hotel Coprosa Ltda." class="w-full h-56 object-cover" loading="lazy">
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=80" alt="Habitación Individual Hotel Coprosa" class="w-full h-56 object-cover" loading="lazy">
                     <div class="p-6">
-                        <h3 class="font-serif text-xl font-bold text-navy-900 mb-2">Suite Confort</h3>
-                        <p class="text-gray-500 text-sm mb-4">Espacios amplios diseñados para tu máximo descanso.</p>
-                        <button onclick="openBookingModal('Suite Confort', 'Gs. 230.000')" class="w-full bg-navy-900 hover:bg-brand-500 text-white py-2.5 rounded-lg font-semibold text-xs transition">Consultar</button>
+                        <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Instalación</span>
+                        <h3 class="font-serif text-lg sm:text-xl font-bold text-navy-900 mb-2 mt-1">Habitación Individual</h3>
+                        <p class="text-gray-500 text-xs sm:text-sm mb-4">Ambiente cálido y tranquilo, ideal para viajes de negocios y estancias ejecutivas.</p>
+                        <button onclick="openBookingModal('Habitación Individual', 'Gs. 130.000')" class="w-full bg-navy-900 hover:bg-brand-500 text-white py-2.5 rounded-lg font-semibold text-xs transition">Consultar Reserva</button>
                     </div>
                 </div>
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
-                    <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80" alt="Habitación Familiar de Hotel Coprosa" class="w-full h-56 object-cover" loading="lazy">
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80" alt="Habitación Familiar Hotel Coprosa" class="w-full h-56 object-cover" loading="lazy">
                     <div class="p-6">
-                        <h3 class="font-serif text-xl font-bold text-navy-900 mb-2">Habitación Familiar</h3>
-                        <p class="text-gray-500 text-sm mb-4">Capacidad para hasta 4 personas completamente equipada.</p>
-                        <button onclick="openBookingModal('Habitación Familiar', 'Gs. 300.000')" class="w-full bg-navy-900 hover:bg-brand-500 text-white py-2.5 rounded-lg font-semibold text-xs transition">Consultar</button>
+                        <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Instalación</span>
+                        <h3 class="font-serif text-lg sm:text-xl font-bold text-navy-900 mb-2 mt-1">Habitación Familiar</h3>
+                        <p class="text-gray-500 text-xs sm:text-sm mb-4">Capacidad para hasta 4 personas, máxima comodidad y espacio para toda la familia.</p>
+                        <button onclick="openBookingModal('Habitación Familiar', 'Gs. 300.000')" class="w-full bg-navy-900 hover:bg-brand-500 text-white py-2.5 rounded-lg font-semibold text-xs transition">Consultar Reserva</button>
                     </div>
                 </div>
             </div>
@@ -233,58 +234,57 @@
     </section>
 
     <!-- SERVICIOS -->
-    <section id="servicios" class="py-20 bg-white">
+    <section id="servicios" class="py-12 sm:py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="text-brand-600 font-bold text-xs uppercase tracking-widest">Servicios Incluidos</span>
-                <h2 class="font-serif text-3xl font-bold text-navy-900 mt-2">Todo para tu comodidad</h2>
-                <div class="w-16 h-1 bg-brand-500 mx-auto mt-4 rounded-full"></div>
+            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+                <span class="text-brand-600 font-bold text-[10px] sm:text-xs uppercase tracking-widest">Servicios Incluidos</span>
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-navy-900 mt-2">Todo para tu comodidad</h2>
+                <div class="w-16 h-1 bg-brand-500 mx-auto mt-3 rounded-full"></div>
             </div>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 text-center">
-                <div class="p-5 bg-gray-50 rounded-xl border border-gray-100"><i class="fas fa-bed text-brand-600 text-2xl mb-2"></i><p class="text-xs font-bold text-navy-900">Habitaciones Climatizadas</p></div>
-                <div class="p-5 bg-gray-50 rounded-xl border border-gray-100"><i class="fas fa-wifi text-brand-600 text-2xl mb-2"></i><p class="text-xs font-bold text-navy-900">Wi-Fi Alta Velocidad</p></div>
-                <div class="p-5 bg-gray-50 rounded-xl border border-gray-100"><i class="fas fa-coffee text-brand-600 text-2xl mb-2"></i><p class="text-xs font-bold text-navy-900">Desayuno Incluido</p></div>
-                <div class="p-5 bg-gray-50 rounded-xl border border-gray-100"><i class="fas fa-parking text-brand-600 text-2xl mb-2"></i><p class="text-xs font-bold text-navy-900">Estacionamiento Seguro</p></div>
-                <div class="p-5 bg-gray-50 rounded-xl border border-gray-100"><i class="fas fa-tshirt text-brand-600 text-2xl mb-2"></i><p class="text-xs font-bold text-navy-900">Servicio de Lavandería</p></div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 text-center">
+                <div class="p-4 sm:p-5 bg-gray-50 rounded-xl border border-gray-100"><i class="fas fa-snowflake text-brand-600 text-xl sm:text-2xl mb-2"></i><p class="text-xs font-bold text-navy-900">Aire Acondicionado</p></div>
+                <div class="p-4 sm:p-5 bg-gray-50 rounded-xl border border-gray-100"><i class="fas fa-wifi text-brand-600 text-xl sm:text-2xl mb-2"></i><p class="text-xs font-bold text-navy-900">Wi-Fi Alta Velocidad</p></div>
+                <div class="p-4 sm:p-5 bg-gray-50 rounded-xl border border-gray-100"><i class="fas fa-coffee text-brand-600 text-xl sm:text-2xl mb-2"></i><p class="text-xs font-bold text-navy-900">Desayuno Incluido</p></div>
+                <div class="p-4 sm:p-5 bg-gray-50 rounded-xl border border-gray-100"><i class="fas fa-parking text-brand-600 text-xl sm:text-2xl mb-2"></i><p class="text-xs font-bold text-navy-900">Estacionamiento Seguro</p></div>
+                <div class="p-4 sm:p-5 bg-gray-50 rounded-xl border border-gray-100"><i class="fas fa-tshirt text-brand-600 text-xl sm:text-2xl mb-2"></i><p class="text-xs font-bold text-navy-900">Servicio de Lavandería</p></div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACTO Y FORMULARIO (17. Validar Forms + 18. SPAM Safe) -->
-    <section id="contacto" class="py-20 bg-gray-50">
+    <!-- CONTACTO Y FORMULARIO -->
+    <section id="contacto" class="py-12 sm:py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                 <div>
-                    <span class="text-brand-600 font-bold text-xs uppercase tracking-widest">Contacto Directo</span>
-                    <h2 class="font-serif text-3xl font-bold text-navy-900 mt-2 mb-6">Estamos para atenderte</h2>
-                    <div class="space-y-4 text-sm">
-                        <div class="flex items-center gap-3"><i class="fas fa-map-marker-alt text-brand-600"></i><span>Segunda Línea Irrazabal Norte - Repatriación, Paraguay</span></div>
-                        <div class="flex items-center gap-3"><i class="fab fa-whatsapp text-brand-600"></i><span>+595 981 353 081</span></div>
+                    <span class="text-brand-600 font-bold text-[10px] sm:text-xs uppercase tracking-widest">Contacto Directo</span>
+                    <h2 class="font-serif text-2xl sm:text-3xl font-bold text-navy-900 mt-2 mb-4 sm:mb-6">Estamos para atenderte</h2>
+                    <div class="space-y-4 text-xs sm:text-sm">
+                        <div class="flex items-start gap-3"><i class="fas fa-map-marker-alt text-brand-600 mt-1"></i><span>Segunda Línea Irrazabal Norte - Repatriación, Paraguay</span></div>
+                        <div class="flex items-center gap-3"><i class="fab fa-whatsapp text-brand-600 text-base"></i><span>+595 981 353 081</span></div>
                         <div class="flex items-center gap-3"><i class="fas fa-envelope text-brand-600"></i><span>info@cooperativacoprosa.com</span></div>
                     </div>
                 </div>
 
-                <!-- Formulario Validado (17. Validar Forms) -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                    <h3 class="font-serif text-xl font-bold text-navy-900 mb-4">Envíanos un mensaje</h3>
+                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <h3 class="font-serif text-lg sm:text-xl font-bold text-navy-900 mb-4">Envíanos un mensaje</h3>
                     <form id="contact-form" class="space-y-4">
                         <div>
                             <label class="block text-xs font-bold text-gray-600 uppercase mb-1">Nombre Completo *</label>
-                            <input type="text" required minlength="3" class="w-full bg-gray-50 border rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                            <input type="text" required minlength="3" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             <div>
                                 <label class="block text-xs font-bold text-gray-600 uppercase mb-1">Teléfono / WhatsApp *</label>
-                                <input type="tel" required pattern="[0-9\s\+]+" class="w-full bg-gray-50 border rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                                <input type="tel" required pattern="[0-9\s\+]+" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
                             </div>
                             <div>
                                 <label class="block text-xs font-bold text-gray-600 uppercase mb-1">Email *</label>
-                                <input type="email" required class="w-full bg-gray-50 border rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                                <input type="email" required class="w-full bg-gray-50 border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
                             </div>
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-gray-600 uppercase mb-1">Mensaje *</label>
-                            <textarea rows="3" required minlength="5" class="w-full bg-gray-50 border rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-brand-500 outline-none"></textarea>
+                            <textarea rows="3" required minlength="5" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:ring-2 focus:ring-brand-500 outline-none"></textarea>
                         </div>
                         <button type="submit" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-bold py-3 rounded-lg transition text-xs uppercase tracking-wider">Enviar Consulta</button>
                     </form>
@@ -293,10 +293,10 @@
         </div>
     </section>
 
-    <!-- FOOTER (1. Política de Privacidad + 2. Términos y Cond.) -->
-    <footer class="bg-navy-900 text-white pt-12 pb-6 mt-auto">
+    <!-- FOOTER -->
+    <footer class="bg-navy-900 text-white pt-10 pb-6 mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span class="font-serif text-2xl font-bold text-white">Hotel Coprosa Ltda.</span>
+            <span class="font-serif text-xl sm:text-2xl font-bold text-white">Hotel Coprosa Ltda.</span>
             <p class="text-gray-400 text-xs mt-1">Vidas que trabajan para la vida • Repatriación, Paraguay</p>
             
             <div class="flex justify-center gap-6 mt-6 text-xs text-gray-400">
@@ -310,8 +310,8 @@
         </div>
     </footer>
 
-    <!-- 5. COOKIE BANNER -->
-    <div id="cookie-banner" class="fixed bottom-4 right-4 max-w-sm bg-navy-900 text-white p-5 rounded-2xl shadow-2xl z-50 border border-gray-700 hidden">
+    <!-- COOKIE BANNER -->
+    <div id="cookie-banner" class="fixed bottom-4 right-4 left-4 sm:left-auto max-w-sm bg-navy-900 text-white p-5 rounded-2xl shadow-2xl z-50 border border-gray-700 hidden">
         <p class="text-xs text-gray-300 mb-3">Utilizamos cookies esenciales para garantizar la mejor experiencia en nuestra web de reservas.</p>
         <div class="flex gap-2">
             <button onclick="acceptCookies()" class="bg-brand-500 hover:bg-brand-600 text-white text-xs font-bold px-4 py-2 rounded-lg w-full">Aceptar</button>
@@ -348,34 +348,35 @@
         </div>
     </div>
 
-    <!-- MODAL 1. POLÍTICA DE PRIVACIDAD -->
+    <!-- MODALES LEGALES -->
     <div id="privacy-modal" class="fixed inset-0 bg-navy-900/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
         <div class="bg-white rounded-2xl max-w-lg w-full p-6 relative shadow-2xl max-h-[80vh] overflow-y-auto text-xs text-gray-600 space-y-3">
             <button onclick="closeModal('privacy-modal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"><i class="fas fa-times"></i></button>
             <h3 class="font-serif text-lg font-bold text-navy-900 mb-2">Política de Privacidad</h3>
-            <p>En Hotel Coprosa Ltda., protegemos sus datos personales. La información facilitada en los formularios de consulta o reserva se utilizará exclusivamente para gestionar sus solicitudes de hospedaje y contacto directo.</p>
-            <p>No compartimos su información personal con terceros sin su consentimiento expreso.</p>
+            <p>En Hotel Coprosa Ltda., protegemos sus datos personales. La información facilitada se utilizará exclusivamente para gestionar sus solicitudes de hospedaje.</p>
         </div>
     </div>
 
-    <!-- MODAL 2. TÉRMINOS Y CONDICIONES -->
     <div id="terms-modal" class="fixed inset-0 bg-navy-900/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
         <div class="bg-white rounded-2xl max-w-lg w-full p-6 relative shadow-2xl max-h-[80vh] overflow-y-auto text-xs text-gray-600 space-y-3">
             <button onclick="closeModal('terms-modal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"><i class="fas fa-times"></i></button>
             <h3 class="font-serif text-lg font-bold text-navy-900 mb-2">Términos y Condiciones</h3>
-            <p>1. <strong>Reservas:</strong> Las solicitudes realizadas a través de la web están sujetas a confirmación de disponibilidad vía WhatsApp o llamada telefónica.</p>
-            <p>2. <strong>Horarios:</strong> Consulte las horas fijas de Check-in y Check-out directamente con recepción.</p>
-            <p>3. <strong>Tarifas:</strong> Los precios expresados en Guaraníes incluyen impuestos correspondientes y desayuno por noche de hospedaje.</p>
+            <p>1. Reservas sujetas a confirmación. 2. Precios expresados en Guaraníes con desayuno incluido por noche.</p>
         </div>
     </div>
 
     <script>
-        // Menu Móvil
-        document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn?.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
 
-        // Modales
+        function closeMobileMenu() {
+            mobileMenu.classList.add('hidden');
+        }
+
         function openModal(id) { document.getElementById(id)?.classList.remove('hidden'); }
         function closeModal(id) { document.getElementById(id)?.classList.add('hidden'); }
         
@@ -384,7 +385,6 @@
             openModal('booking-modal');
         }
 
-        // Cookie Banner
         if (!localStorage.getItem('cookiesAccepted')) {
             document.getElementById('cookie-banner')?.classList.remove('hidden');
         }
@@ -393,7 +393,6 @@
             document.getElementById('cookie-banner')?.classList.add('hidden');
         }
 
-        // Formularios
         document.getElementById('contact-form')?.addEventListener('submit', (e) => {
             e.preventDefault();
             alert('¡Gracias por su mensaje! Nos pondremos en contacto a la brevedad.');
