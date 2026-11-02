@@ -41,13 +41,13 @@
                         terracota: {
                             50: '#fdf7f5',
                             100: '#f8ebe6',
-                            500: '#b87664', // Tono Terracota Elegante de la habitación
+                            500: '#b87664',
                             600: '#a36352',
                             700: '#854d3e',
                         },
                         navy: {
-                            800: '#2d333b', // Gris Elegante del respaldo
-                            900: '#1a1e24', // Fondo Ultra Lujo
+                            800: '#2d333b',
+                            900: '#1a1e24',
                         },
                         gold: {
                             500: '#c59b27',
@@ -65,7 +65,6 @@
     <style>
         html { scroll-behavior: smooth; }
 
-        /* EFECTO HERO KEN BURNS SUAVE */
         .hero-container {
             position: relative;
             overflow: hidden;
@@ -104,7 +103,6 @@
             100% { transform: scale(1.10); }
         }
 
-        /* CANVAS 3D INTERACTIVO */
         #room-3d-canvas {
             width: 100%;
             height: 100%;
@@ -118,7 +116,7 @@
 </head>
 <body class="font-sans text-navy-800 bg-white flex flex-col min-h-screen relative selection:bg-terracota-500 selection:text-white">
 
-    <!-- TOAST NOTIFICACIÓN ELEGANTE (Sin alertas nativas) -->
+    <!-- TOAST NOTIFICACIÓN -->
     <div id="toast-notification" class="fixed top-6 right-6 z-50 bg-navy-900 text-white px-6 py-4 rounded-xl shadow-2xl border border-terracota-500/30 flex items-center gap-4 transition-all duration-300 transform translate-y-[-160%] opacity-0 pointer-events-none">
         <div class="w-10 h-10 rounded-full bg-terracota-500/20 text-terracota-500 flex items-center justify-center text-xl">
             <i class="fas fa-check"></i>
@@ -129,7 +127,7 @@
         </div>
     </div>
 
-    <!-- NAVEGACIÓN PRINCIPAL EDITORIAL -->
+    <!-- HEADER -->
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20 sm:h-24">
@@ -143,7 +141,7 @@
 
                 <nav class="hidden md:flex items-center space-x-8 text-xs font-semibold uppercase tracking-widest text-navy-800">
                     <a href="#inicio" class="hover:text-terracota-500 transition">Inicio</a>
-                    <a href="#habitaciones" class="hover:text-terracota-500 transition">Habitaciones & 3D</a>
+                    <a href="#habitaciones" class="hover:text-terracota-500 transition">Habitación 09 & 3D</a>
                     <a href="#tarifas" class="hover:text-terracota-500 transition">Tarifas</a>
                     <a href="#servicios" class="hover:text-terracota-500 transition">Servicios</a>
                     <a href="#ubicacion" class="hover:text-terracota-500 transition">Ubicación</a>
@@ -165,10 +163,9 @@
             </div>
         </div>
 
-        <!-- Menú Móvil -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-200 px-6 pt-3 pb-6 space-y-3 font-semibold text-xs uppercase tracking-wider">
             <a href="#inicio" onclick="closeMobileMenu()" class="block py-2.5 border-b border-gray-100 text-navy-900">Inicio</a>
-            <a href="#habitaciones" onclick="closeMobileMenu()" class="block py-2.5 border-b border-gray-100 text-navy-900">Habitaciones & 3D</a>
+            <a href="#habitaciones" onclick="closeMobileMenu()" class="block py-2.5 border-b border-gray-100 text-navy-900">Habitación 09 & 3D</a>
             <a href="#tarifas" onclick="closeMobileMenu()" class="block py-2.5 border-b border-gray-100 text-navy-900">Tarifas</a>
             <a href="#servicios" onclick="closeMobileMenu()" class="block py-2.5 border-b border-gray-100 text-navy-900">Servicios</a>
             <a href="#ubicacion" onclick="closeMobileMenu()" class="block py-2.5 border-b border-gray-100 text-navy-900">Ubicación</a>
@@ -179,7 +176,7 @@
         </div>
     </header>
 
-    <!-- HERO SECTION CINEMATOGRÁFICO -->
+    <!-- HERO SECTION -->
     <section id="inicio" class="hero-container text-white py-20 sm:py-32 flex items-center min-h-[82vh] lg:min-h-[90vh]">
         <div class="hero-bg-animated"></div>
         <div class="hero-overlay"></div>
@@ -197,7 +194,7 @@
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="#habitaciones" class="w-full sm:w-auto text-center bg-terracota-500 hover:bg-terracota-600 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition text-xs uppercase tracking-wider">
-                        Explorar Habitaciones
+                        Ver Habitación 09
                     </a>
                     <a href="https://wa.me/595981353081?text=Hola%20Hotel%20Coprosa,%20quisiera%20consultar%20tarifas" target="_blank" class="w-full sm:w-auto text-center bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-md font-semibold px-8 py-4 rounded-xl shadow-lg flex items-center justify-center gap-2 transition text-xs uppercase tracking-wider">
                         <i class="fab fa-whatsapp text-lg text-green-400"></i> Contactar al 0981 353 081
@@ -207,91 +204,79 @@
         </div>
     </section>
 
-    <!-- SECCIÓN INTERACTIVA DE HABITACIONES Y MAQUETA 3D / VISOR -->
+    <!-- SECCIÓN INTERACTIVA DE HABITACIÓN 09 Y MAQUETA 3D -->
     <section id="habitaciones" class="py-16 sm:py-28 bg-terracota-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16">
                 <div>
-                    <span class="text-terracota-500 font-bold text-xs uppercase tracking-[0.2em]">Recorrido & Espacio</span>
-                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-navy-900 mt-2">Nuestras Habitaciones</h2>
+                    <span class="text-terracota-500 font-bold text-xs uppercase tracking-[0.2em]">Tour Real • Habitación 09</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold text-navy-900 mt-2">Nuestra Habitación Doble Confort</h2>
                 </div>
                 <p class="text-gray-600 text-sm max-w-md mt-4 md:mt-0 font-light">
-                    Explora la distribución en 3D interactivo o revisa las fotografías reales de cada estancia.
+                    Basada en nuestro recorrido real: climatizada, con baño privado en mármol blanco y camas dobles impecables.
                 </p>
             </div>
 
-            <!-- CONTENEDOR PRINCIPAL: VISOR 3D + FICHA DE HABITACIÓN (Estilo DosDuo Studio) -->
+            <!-- CONTENEDOR VISOR 3D Y DETALLES -->
             <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 grid grid-cols-1 lg:grid-cols-12 mb-16">
                 
-                <!-- COLUMNA IZQUIERDA: VISOR INTERACTIVO 3D WEBGL -->
                 <div class="lg:col-span-7 bg-navy-900 relative min-h-[380px] sm:min-h-[480px] flex items-center justify-center">
-                    <!-- Canvas 3D -->
                     <canvas id="room-3d-canvas"></canvas>
-                    
-                    <!-- Overlay Controles 3D -->
                     <div class="absolute top-4 left-4 bg-navy-900/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 text-[11px] text-gray-300 flex items-center gap-2">
                         <i class="fas fa-cube text-terracota-500"></i>
-                        <span>Maqueta 3D Interactiva • Arrastra para rotar 360°</span>
+                        <span>Maqueta 3D Habitación 09 • Arrastra para rotar 360°</span>
                     </div>
-
-                    <!-- Botón Restablecer Cámara -->
                     <button onclick="reset3DCamera()" class="absolute bottom-4 right-4 bg-white/10 hover:bg-white/20 text-white p-2.5 rounded-lg text-xs backdrop-blur-md border border-white/20 transition" title="Restablecer vista">
                         <i class="fas fa-sync-alt"></i> Restablecer Vista
                     </button>
                 </div>
 
-                <!-- COLUMNA DERECHA: SELECTOR DE HABITACIÓN Y DETALLES -->
                 <div class="lg:col-span-5 p-6 sm:p-10 flex flex-col justify-between">
                     <div>
-                        <!-- Tabs de selección de habitación -->
                         <div class="flex border-b border-gray-200 mb-6 gap-6">
-                            <button onclick="selectRoomTab('doble')" id="tab-doble" class="pb-3 text-xs font-bold uppercase tracking-wider border-b-2 border-terracota-500 text-terracota-500 transition">Doble Confort</button>
+                            <button onclick="selectRoomTab('doble')" id="tab-doble" class="pb-3 text-xs font-bold uppercase tracking-wider border-b-2 border-terracota-500 text-terracota-500 transition">Habitación 09 (Doble)</button>
                             <button onclick="selectRoomTab('individual')" id="tab-individual" class="pb-3 text-xs font-bold uppercase tracking-wider border-b-2 border-transparent text-gray-400 hover:text-navy-900 transition">Individual</button>
                             <button onclick="selectRoomTab('familiar')" id="tab-familiar" class="pb-3 text-xs font-bold uppercase tracking-wider border-b-2 border-transparent text-gray-400 hover:text-navy-900 transition">Familiar</button>
                         </div>
 
-                        <!-- Ficha de la Habitación Seleccionada -->
                         <div id="room-info-content">
-                            <span class="inline-block bg-terracota-100 text-terracota-700 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">Foto Real Verificada</span>
-                            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-navy-900 mb-2" id="room-title">Habitación Doble Confort</h3>
+                            <span class="inline-block bg-terracota-100 text-terracota-700 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full mb-3">Grabación Real Verificada</span>
+                            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-navy-900 mb-2" id="room-title">Habitación 09 - Doble Confort</h3>
                             <div class="text-2xl font-bold text-terracota-500 mb-4" id="room-price">Gs. 180.000 <span class="text-xs text-gray-400 font-normal">/ noche con desayuno</span></div>
                             
                             <p class="text-xs sm:text-sm text-gray-600 mb-6 leading-relaxed font-light" id="room-desc">
-                                Equipada con dos camas de máxima comodidad, aire acondicionado split silencioso, cortinas blackout de aislamiento térmico e iluminación natural ambiente.
+                                Equipada con dos camas de máxima comodidad, aire acondicionado split, ropero integrado, baño privado con revestimiento de mármol blanco y ducha de alta presión.
                             </p>
 
-                            <!-- Especificaciones -->
                             <div class="grid grid-cols-2 gap-3 mb-6 text-xs text-navy-800">
                                 <div class="p-3 bg-gray-50 rounded-xl flex items-center gap-2"><i class="fas fa-bed text-terracota-500"></i> <span id="room-spec-beds">2 Camas</span></div>
                                 <div class="p-3 bg-gray-50 rounded-xl flex items-center gap-2"><i class="fas fa-snowflake text-terracota-500"></i> <span>Aire Split</span></div>
-                                <div class="p-3 bg-gray-50 rounded-xl flex items-center gap-2"><i class="fas fa-wifi text-terracota-500"></i> <span>Wi-Fi Gratis</span></div>
+                                <div class="p-3 bg-gray-50 rounded-xl flex items-center gap-2"><i class="fas fa-bath text-terracota-500"></i> <span>Baño Privado</span></div>
                                 <div class="p-3 bg-gray-50 rounded-xl flex items-center gap-2"><i class="fas fa-utensils text-terracota-500"></i> <span>Desayuno Incluido</span></div>
                             </div>
                         </div>
                     </div>
 
                     <button onclick="openBookingModalCurrent()" class="w-full bg-navy-900 hover:bg-terracota-500 text-white font-semibold py-4 rounded-xl text-xs uppercase tracking-wider shadow-md transition flex items-center justify-center gap-2">
-                        <i class="fab fa-whatsapp text-base"></i> Reservar Esta Habitación
+                        <i class="fab fa-whatsapp text-base"></i> Reservar Habitación 09
                     </button>
                 </div>
             </div>
 
-            <!-- TARJETAS SECUNDARIAS DE FOTOS -->
+            <!-- TARJETAS SECUNDARIAS -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Habitación Doble Real (Tu foto) -->
                 <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 group hover:shadow-md transition">
                     <div class="relative h-60 overflow-hidden">
-                        <img src="habitacion.png" alt="Habitación Doble Real Hotel Coprosa" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <span class="absolute top-3 left-3 bg-navy-900/80 text-white text-[10px] font-bold px-3 py-1 rounded-full backdrop-blur-md">Foto Real</span>
+                        <img src="habitacion.png" alt="Habitación 09 Hotel Coprosa" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 left-3 bg-navy-900/80 text-white text-[10px] font-bold px-3 py-1 rounded-full backdrop-blur-md">Habitación 09</span>
                     </div>
                     <div class="p-6">
                         <h4 class="font-serif text-lg font-bold text-navy-900">Doble Confort</h4>
                         <p class="text-xs text-gray-500 mt-1 mb-4">Gs. 180.000 / noche</p>
-                        <button onclick="openBookingModal('Doble Confort', 'Gs. 180.000')" class="w-full text-center border border-navy-800/20 text-navy-900 font-semibold py-2.5 rounded-lg text-xs hover:bg-terracota-500 hover:text-white hover:border-terracota-500 transition">Ver disponibilidad</button>
+                        <button onclick="openBookingModal('Habitación 09 (Doble)', 'Gs. 180.000')" class="w-full text-center border border-navy-800/20 text-navy-900 font-semibold py-2.5 rounded-lg text-xs hover:bg-terracota-500 hover:text-white hover:border-terracota-500 transition">Ver disponibilidad</button>
                     </div>
                 </div>
 
-                <!-- Individual -->
                 <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 group hover:shadow-md transition">
                     <div class="relative h-60 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=80" alt="Habitación Individual Hotel Coprosa" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -303,7 +288,6 @@
                     </div>
                 </div>
 
-                <!-- Familiar -->
                 <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 group hover:shadow-md transition">
                     <div class="relative h-60 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80" alt="Habitación Familiar Hotel Coprosa" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
@@ -318,7 +302,7 @@
         </div>
     </section>
 
-    <!-- TABLA DE TARIFAS (Desayuno Incluido) -->
+    <!-- TARIFAS -->
     <section id="tarifas" class="py-16 sm:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
@@ -342,7 +326,7 @@
 
                 <div class="bg-terracota-50 p-6 rounded-2xl border-2 border-terracota-500 text-center relative shadow-md">
                     <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-terracota-500 text-white text-[9px] uppercase font-bold px-3 py-1 rounded-full tracking-widest">Más Elegida</span>
-                    <span class="text-xs font-bold text-terracota-700 uppercase tracking-widest">Parejas / Trabajo</span>
+                    <span class="text-xs font-bold text-terracota-700 uppercase tracking-widest">Habitación 09</span>
                     <h4 class="font-serif text-xl font-bold text-navy-900 mt-1">2 Personas</h4>
                     <div class="text-3xl font-bold text-terracota-500 my-4">Gs. 180.000</div>
                     <ul class="text-xs text-gray-600 space-y-2 mb-6 text-left">
@@ -350,7 +334,7 @@
                         <li><i class="fas fa-check text-terracota-500 mr-2"></i>Camas dobles confortables</li>
                         <li><i class="fas fa-check text-terracota-500 mr-2"></i>Wi-Fi & Estacionamiento</li>
                     </ul>
-                    <button onclick="openBookingModal('2 Personas', 'Gs. 180.000')" class="w-full bg-terracota-500 hover:bg-terracota-600 text-white font-semibold py-3 rounded-xl text-xs uppercase tracking-wider transition">Reservar Ahora</button>
+                    <button onclick="openBookingModal('Habitación 09 (2 Personas)', 'Gs. 180.000')" class="w-full bg-terracota-500 hover:bg-terracota-600 text-white font-semibold py-3 rounded-xl text-xs uppercase tracking-wider transition">Reservar Ahora</button>
                 </div>
 
                 <div class="bg-gray-50 p-6 rounded-2xl border border-gray-200 text-center hover:border-terracota-500 transition">
@@ -418,7 +402,7 @@
         </div>
     </section>
 
-    <!-- UBICACIÓN E ITINERARIO REPATRIACIÓN -->
+    <!-- UBICACIÓN -->
     <section id="ubicacion" class="py-16 sm:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -426,7 +410,7 @@
                     <span class="text-terracota-500 font-bold text-xs uppercase tracking-[0.2em]">Ubicación Estratégica</span>
                     <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900 mt-2 mb-6">En el corazón de Repatriación</h2>
                     <p class="text-sm text-gray-600 font-light mb-6 leading-relaxed">
-                        Ubicados estratégicamente sobre la Segunda Línea Irrazabal Norte, facilitando el acceso directo a los centros comerciales, cooperativas y puntos clave de la ciudad de Caaguazú.
+                        Ubicados estratégicamente sobre la Segunda Línea Irrazabal Norte, facilitando el acceso directo a los centros comerciales, cooperativas y puntos clave de la ciudad.
                     </p>
                     <div class="space-y-4 text-xs sm:text-sm text-navy-800">
                         <div class="flex items-start gap-3">
@@ -453,7 +437,7 @@
         </div>
     </section>
 
-    <!-- PREGUNTAS FRECUENTES (FAQ) -->
+    <!-- FAQ -->
     <section id="faq" class="py-16 sm:py-24 bg-terracota-50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
@@ -484,18 +468,18 @@
 
                 <details class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 group">
                     <summary class="font-serif font-bold text-navy-900 cursor-pointer flex justify-between items-center text-sm sm:text-base">
-                        ¿Las habitaciones cuentan con aire acondicionado?
+                        ¿Las habitaciones cuentan con baño privado?
                         <i class="fas fa-chevron-down text-terracota-500 group-open:rotate-180 transition"></i>
                     </summary>
                     <p class="text-xs sm:text-sm text-gray-500 font-light mt-3 leading-relaxed">
-                        Todas nuestras habitaciones disponen de acondicionadores de aire tipo Split modernos y silenciosos.
+                        Sí, todas nuestras habitaciones (como la Habitación 09) disponen de baño privado completo con revestimiento de alta calidad y agua caliente/fría.
                     </p>
                 </details>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER EDITORIAL -->
+    <!-- FOOTER -->
     <footer class="bg-navy-900 text-white pt-12 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h3 class="font-serif text-2xl font-bold">Hotel Coprosa</h3>
@@ -512,13 +496,13 @@
         </div>
     </footer>
 
-    <!-- MODAL RESERVAS WHATSAPP -->
+    <!-- MODAL RESERVAS -->
     <div id="booking-modal" class="fixed inset-0 bg-navy-900/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
         <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 relative shadow-2xl border border-gray-100">
             <button onclick="closeModal('booking-modal')" class="absolute top-5 right-5 text-gray-400 hover:text-navy-900 text-lg"><i class="fas fa-times"></i></button>
             <span class="text-terracota-500 font-bold text-[10px] uppercase tracking-widest">Reserva Directa</span>
             <h3 class="font-serif text-2xl font-bold text-navy-900 mb-1">Confirmar Estancia</h3>
-            <p id="modal-room-name" class="text-terracota-500 font-semibold text-xs mb-6">Doble Confort - Gs. 180.000</p>
+            <p id="modal-room-name" class="text-terracota-500 font-semibold text-xs mb-6">Habitación 09 - Gs. 180.000</p>
             
             <form id="modal-form" class="space-y-4">
                 <div>
@@ -563,19 +547,17 @@
         </div>
     </div>
 
-    <!-- JAVASCRIPT & THREE.JS 3D RENDERER -->
+    <!-- JAVASCRIPT & THREE.JS -->
     <script>
-        // --- MENÚ MÓVIL ---
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
         function closeMobileMenu() { mobileMenu.classList.add('hidden'); }
 
-        // --- MODALES Y TOAST ---
         function openModal(id) { document.getElementById(id)?.classList.remove('hidden'); }
         function closeModal(id) { document.getElementById(id)?.classList.add('hidden'); }
 
-        let currentSelectedRoom = "Doble Confort";
+        let currentSelectedRoom = "Habitación 09 (Doble Confort)";
         let currentSelectedPrice = "Gs. 180.000";
 
         function openBookingModal(room, price) {
@@ -603,7 +585,6 @@
             }, 3500);
         }
 
-        // --- MANEJO DEL FORMULARIO DE RESERVA EN WHATSAPP ---
         document.getElementById('modal-form')?.addEventListener('submit', (e) => {
             e.preventDefault();
             const name = document.getElementById('book-name').value;
@@ -621,24 +602,23 @@
             }, 800);
         });
 
-        // --- TABS DE HABITACIONES ---
         const roomsData = {
             doble: {
-                title: "Habitación Doble Confort",
+                title: "Habitación 09 - Doble Confort",
                 price: "Gs. 180.000",
-                desc: "Equipada con dos camas de máxima comodidad, aire acondicionado split silencioso, cortinas blackout e iluminación cálida ambiente.",
+                desc: "Equipada con dos camas de máxima comodidad, aire acondicionado split, ropero integrado, baño privado con revestimiento de mármol blanco y ducha de alta presión.",
                 beds: "2 Camas"
             },
             individual: {
                 title: "Habitación Individual",
                 price: "Gs. 130.000",
-                desc: "Ambiente cálido, tranquilo y ejecutivo. Ideal para viajes de trabajo o descansos individuales en Repatriación.",
-                beds: "1 Cama Matrimonial"
+                desc: "Ambiente cálido, tranquilo y ejecutivo, ideal para estancias de trabajo o descanso en Repatriación.",
+                beds: "1 Cama"
             },
             familiar: {
                 title: "Habitación Familiar",
                 price: "Gs. 300.000",
-                desc: "Espacio amplio con capacidad para hasta 4 personas, máxima comodidad, acondicionador de aire y baño amplio privado.",
+                desc: "Espacio amplio con capacidad para hasta 4 personas, máxima comodidad, acondicionador de aire y baño privado.",
                 beds: "4 Camas"
             }
         };
@@ -661,21 +641,13 @@
             document.getElementById('room-price').innerHTML = `${info.price} <span class="text-xs text-gray-400 font-normal">/ noche con desayuno</span>`;
             document.getElementById('room-desc').innerText = info.desc;
             document.getElementById('room-spec-beds').innerText = info.beds;
-
-            // Actualizar color o animación de la maqueta 3D
-            if (room3DMesh) {
-                if (key === 'individual') room3DMesh.scale.set(0.8, 1, 0.8);
-                else if (key === 'familiar') room3DMesh.scale.set(1.2, 1, 1.2);
-                else room3DMesh.scale.set(1, 1, 1);
-            }
         }
 
-        // --- RENDERIZADOR 3D INTERACTIVO (THREE.JS WEBGL) ---
+        // Three.js 3D Model
         let scene, camera, renderer, controls, room3DMesh;
 
         function init3DScene() {
-            const container = id => document.getElementById(id);
-            const canvas = container('room-3d-canvas');
+            const canvas = document.getElementById('room-3d-canvas');
             if (!canvas) return;
 
             const rect = canvas.parentElement.getBoundingClientRect();
@@ -689,30 +661,23 @@
             renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
             renderer.setSize(rect.width, rect.height);
             renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-            renderer.shadowMap.enabled = true;
 
-            // Iluminación
             const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
             scene.add(ambientLight);
 
             const dirLight = new THREE.DirectionalLight(0xfff5e6, 0.8);
             dirLight.position.set(5, 10, 7);
-            dirLight.castShadow = true;
             scene.add(dirLight);
 
-            // Construir Maqueta 3D de la Habitación
             room3DMesh = new THREE.Group();
 
-            // Piso de madera
-            const floorGeo = new THREE.BoxGeometry(4, 0.1, 4);
-            const floorMat = new THREE.MeshStandardMaterial({ color: 0x8b5a2b, roughness: 0.4 });
-            const floor = new THREE.Mesh(floorGeo, floorMat);
+            // Piso
+            const floor = new THREE.Mesh(new THREE.BoxGeometry(4, 0.1, 4), new THREE.MeshStandardMaterial({ color: 0x8b5a2b }));
             floor.position.y = -0.05;
             room3DMesh.add(floor);
 
-            // Paredes rosadas/terracota sutiles (Color real)
-            const wallMat = new THREE.MeshStandardMaterial({ color: 0xe8a598, roughness: 0.6 });
-            
+            // Paredes (Color Terracota Suave de la Habitación 09)
+            const wallMat = new THREE.MeshStandardMaterial({ color: 0xe8a598 });
             const wallBack = new THREE.Mesh(new THREE.BoxGeometry(4, 2.5, 0.1), wallMat);
             wallBack.position.set(0, 1.2, -2);
             room3DMesh.add(wallBack);
@@ -721,39 +686,27 @@
             wallLeft.position.set(-2, 1.2, 0);
             room3DMesh.add(wallLeft);
 
-            // Camas (Camas reales con cabecero oscuro y sábanas blancas)
+            // Camas
             const bedMat = new THREE.MeshStandardMaterial({ color: 0xffffff });
-            const headboardMat = new THREE.MeshStandardMaterial({ color: 0x2d333b });
+            const headMat = new THREE.MeshStandardMaterial({ color: 0x2d333b });
 
-            // Cama 1
             const bed1 = new THREE.Mesh(new THREE.BoxGeometry(1.2, 0.5, 1.8), bedMat);
             bed1.position.set(-0.9, 0.25, -0.8);
-            const head1 = new THREE.Mesh(new THREE.BoxGeometry(1.2, 1, 0.1), headboardMat);
-            head1.position.set(-0.9, 0.5, -1.75);
-            room3DMesh.add(bed1, head1);
+            const h1 = new THREE.Mesh(new THREE.BoxGeometry(1.2, 1, 0.1), headMat);
+            h1.position.set(-0.9, 0.5, -1.75);
+            room3DMesh.add(bed1, h1);
 
-            // Cama 2
             const bed2 = new THREE.Mesh(new THREE.BoxGeometry(1.2, 0.5, 1.8), bedMat);
             bed2.position.set(0.9, 0.25, -0.8);
-            const head2 = new THREE.Mesh(new THREE.BoxGeometry(1.2, 1, 0.1), headboardMat);
-            head2.position.set(0.9, 0.5, -1.75);
-            room3DMesh.add(bed2, head2);
-
-            // Aire Split en pared
-            const acMat = new THREE.MeshStandardMaterial({ color: 0xf0f0f0 });
-            const ac = new THREE.Mesh(new THREE.BoxGeometry(1, 0.3, 0.2), acMat);
-            ac.position.set(0.9, 2.1, -1.85);
-            room3DMesh.add(ac);
+            const h2 = new THREE.Mesh(new THREE.BoxGeometry(1.2, 1, 0.1), headMat);
+            h2.position.set(0.9, 0.5, -1.75);
+            room3DMesh.add(bed2, h2);
 
             scene.add(room3DMesh);
 
-            // Controles Orbit en 3D
             controls = new THREE.OrbitControls(camera, renderer.domElement);
             controls.enableDamping = true;
-            controls.dampingFactor = 0.05;
-            controls.maxPolarAngle = Math.PI / 2 - 0.05;
 
-            // Animación de rotación continua suave
             function animate() {
                 requestAnimationFrame(animate);
                 if (room3DMesh) room3DMesh.rotation.y += 0.002;
@@ -778,7 +731,6 @@
             }
         }
 
-        // Inicializar 3D al cargar la página
         window.addEventListener('DOMContentLoaded', init3DScene);
     </script>
 </body>
