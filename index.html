@@ -129,7 +129,7 @@
         </div>
     </div>
 
-    <!-- NAVEGACIÓN LIMPIA -->
+    <!-- NAVEGACIÓN -->
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20 sm:h-24">
@@ -203,7 +203,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN DE HABITACIONES & GALERÍA -->
+    <!-- SECCIÓN DE HABITACIONES & GALERÍA CON TUS TRES IMÁGENES REALES -->
     <section id="habitaciones" class="py-16 sm:py-28 bg-terracota-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16">
@@ -217,11 +217,10 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Doble Confort -->
+                <!-- Doble Confort (habitacion.png) -->
                 <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 group hover:shadow-xl transition duration-300">
                     <div class="relative h-72 overflow-hidden">
-                        <img src="habitacion.png" alt="Habitación Doble Real Hotel Coprosa" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-                        <span class="absolute top-4 left-4 bg-navy-900/90 text-white text-[10px] font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full backdrop-blur-md">Foto Real Verificada</span>
+                        <img src="habitacion.png" alt="Habitación Doble Confort Hotel Coprosa" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
                     </div>
                     <div class="p-8">
                         <h3 class="font-serif text-xl font-bold text-navy-900 mb-2">Habitación Doble Confort</h3>
@@ -233,10 +232,10 @@
                     </div>
                 </div>
 
-                <!-- Individual -->
+                <!-- Individual (individual.jpeg) -->
                 <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 group hover:shadow-xl transition duration-300">
                     <div class="relative h-72 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=80" alt="Habitación Individual Hotel Coprosa" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                        <img src="individual.jpeg" alt="Habitación Individual Hotel Coprosa" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
                     </div>
                     <div class="p-8">
                         <h3 class="font-serif text-xl font-bold text-navy-900 mb-2">Habitación Individual</h3>
@@ -248,10 +247,10 @@
                     </div>
                 </div>
 
-                <!-- Familiar -->
+                <!-- Familiar (familiar.jpg) -->
                 <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 group hover:shadow-xl transition duration-300">
                     <div class="relative h-72 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80" alt="Habitación Familiar Hotel Coprosa" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+                        <img src="familiar.jpg" alt="Habitación Familiar Hotel Coprosa" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
                     </div>
                     <div class="p-8">
                         <h3 class="font-serif text-xl font-bold text-navy-900 mb-2">Habitación Familiar</h3>
@@ -552,7 +551,7 @@
             const checkOut = document.getElementById('book-out').value;
             const phone = document.getElementById('book-phone').value;
 
-            const text = `Hola Hotel Coprosa! Deseo realizar una reserva: Habitacion: ${currentSelectedRoom} (${currentSelectedPrice}) - Nombre: ${name} - Entrada: ${checkIn} - Salida: ${checkOut} - WhatsApp: ${phone}`;
+            const text = `Hola! Estoy interesado en hospedarme en el Hotel y quisiera consultarles algunas dudas. Habitación: ${currentSelectedRoom} (${currentSelectedPrice}) - Nombre: ${name} - Entrada: ${checkIn} - Salida: ${checkOut} - WhatsApp: ${phone}`;
             
             closeModal('booking-modal');
             showToast('¡Redirigiendo a WhatsApp!', 'Abriendo chat para confirmar tu reserva...');
