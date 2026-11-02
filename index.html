@@ -80,19 +80,25 @@
             z-index: 1;
         }
 
+        /* Quitamos el oscurecimiento pesado y dejamos la foto limpia con una ligera claridad */
         .hero-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(180deg, rgba(26, 30, 36, 0.70) 0%, rgba(26, 30, 36, 0.88) 100%);
+            background: linear-gradient(180deg, rgba(26, 30, 36, 0.25) 0%, rgba(26, 30, 36, 0.45) 100%);
             z-index: 2;
         }
 
         .hero-content {
             position: relative;
             z-index: 3;
+        }
+
+        /* Sombra elegante en los textos para perfecta legibilidad sobre la foto clara */
+        .hero-text-shadow {
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
         }
 
         @keyframes zoomSlow {
@@ -182,13 +188,13 @@
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full hero-content">
             <div class="max-w-3xl">
-                <span class="inline-block bg-terracota-500/90 text-white text-[10px] sm:text-xs font-semibold uppercase tracking-[0.25em] px-4 py-1.5 rounded-full mb-6 backdrop-blur-sm">
+                <span class="inline-block bg-terracota-500/90 text-white text-[10px] sm:text-xs font-semibold uppercase tracking-[0.25em] px-4 py-1.5 rounded-full mb-6 backdrop-blur-sm shadow-md">
                     Alojamiento en Repatriación
                 </span>
-                <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+                <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6 hero-text-shadow">
                     Hotel Coprosa
                 </h1>
-                <p class="text-base sm:text-xl text-gray-200 mb-8 font-light leading-relaxed max-w-2xl">
+                <p class="text-base sm:text-xl text-gray-100 mb-8 font-light leading-relaxed max-w-2xl hero-text-shadow">
                     Confort, tranquilidad y hospitalidad excepcional. Disfruta de nuestras habitaciones perfectamente climatizadas con desayuno incluido y estacionamiento seguro.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
@@ -203,7 +209,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN DE HABITACIONES & GALERÍA CON TUS TRES IMÁGENES REALES -->
+    <!-- SECCIÓN DE HABITACIONES & GALERÍA -->
     <section id="habitaciones" class="py-16 sm:py-28 bg-terracota-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16">
@@ -498,7 +504,7 @@
         <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl text-xs text-gray-600 space-y-3">
             <button onclick="closeModal('privacy-modal')" class="absolute top-5 right-5 text-gray-400 hover:text-navy-900"><i class="fas fa-times"></i></button>
             <h3 class="font-serif text-xl font-bold text-navy-900 mb-2">Política de Privacidad</h3>
-            <p>En Hotel Coprosa, garantizamos la privacidad de sus datos personales facilitados para solicitudes de estancia.</p>
+            <p>In Hotel Coprosa, garantizamos la privacidad de sus datos personales facilitados para solicitudes de estancia.</p>
         </div>
     </div>
 
