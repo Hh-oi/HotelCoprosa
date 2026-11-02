@@ -3,36 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 4. Forzar HTTPS -->
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     
-    <!-- 6. Metadescripciones -->
-    <title>Hotel Coprosa Ltda. | Alojamiento y Reservas en Repatriación</title>
-    <meta name="description" content="Hotel Coprosa Ltda. en Repatriación, Caaguazú. Habitaciones modernas con aire acondicionado, desayuno incluido, Wi-Fi gratis, lavandería y estacionamiento seguro.">
+    <title>Hotel Coprosa | Alojamiento y Reservas en Repatriación</title>
+    <meta name="description" content="Hotel Coprosa en Repatriación, Caaguazú. Habitaciones modernas con aire acondicionado, desayuno incluido, Wi-Fi gratis, lavandería y estacionamiento seguro.">
     <meta name="keywords" content="Hotel Coprosa, Repatriación, Hotel Caaguazú, Alojamiento Paraguay, Hospedaje">
     
-    <!-- 7. Web Preview Link (Open Graph / WhatsApp / Facebook) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hh-oi.github.io/HotelCoprosa/">
-    <meta property="og:title" content="Hotel Coprosa Ltda. - Vidas que trabajan para la vida">
-    <meta property="og:description" content="Habitaciones desde Gs. 130.000 con desayuno incluido. Reserva directamente por WhatsApp.">
+    <meta property="og:title" content="Hotel Coprosa - Repatriación">
+    <meta property="og:description" content="Habitaciones confortables desde Gs. 130.000 con desayuno incluido. Reserva directamente por WhatsApp.">
     <meta property="og:image" content="habitacion.png">
 
-    <!-- 8. Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23c59b27'/><text y='70' x='20' fill='white' font-size='70' font-family='serif' font-weight='bold'>C</text></svg>">
-
-    <!-- 9. Sitemap link -->
     <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
-
-    <!-- Verificación Google Search Console -->
     <meta name="google-site-verification" content="KYONDm9ALXqqwGvAPnMYdxA2yTwhXQ4DuFv1-yET0aY" />
 
-    <!-- 12. Vel. Carga - Preconnect Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -42,15 +32,15 @@
                 extend: {
                     colors: {
                         brand: {
-                            50: '#fbf8f3',
-                            100: '#f5edd7',
+                            50: '#fdf8f6',
+                            100: '#f7e9e3',
                             500: '#c59b27',
-                            600: '#ab7f1c',
-                            700: '#885f18',
+                            600: '#b87664', // Tono Terracota Elegante de la habitación
+                            700: '#945343',
                         },
                         navy: {
-                            800: '#0f172a',
-                            900: '#090d16',
+                            800: '#2d333b', // Gris Elegante de los cabeceros/cortinas
+                            900: '#1a1e24',
                         }
                     },
                     fontFamily: {
@@ -63,12 +53,44 @@
     </script>
     <style>
         html { scroll-behavior: smooth; }
-        /* Fondo Adaptable a Móvil, Tablet y Escritorio con habitacion.png */
-        .hero-bg {
-            background-image: linear-gradient(rgba(9, 13, 22, 0.72), rgba(9, 13, 22, 0.82)), url('habitacion.png');
+
+        /* HERO ANIMADO CON EFECTO ZOOM SUTIL Y CUBRIMIENTO PERFECTO */
+        .hero-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg-animated {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('habitacion.png');
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
+            animation: zoomSlow 20s infinite alternate ease-in-out;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(26, 30, 36, 0.75) 0%, rgba(26, 30, 36, 0.85) 100%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+        }
+
+        @keyframes zoomSlow {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.12); }
         }
     </style>
 </head>
@@ -80,10 +102,7 @@
             <div class="flex justify-between items-center h-20">
                 <a href="#" class="flex items-center gap-3 group">
                     <div class="w-10 h-10 rounded-lg bg-brand-500 text-white flex items-center justify-center font-serif text-xl font-bold shadow-md">C</div>
-                    <div class="flex flex-col">
-                        <span class="font-serif text-lg sm:text-xl font-bold text-navy-900">Hotel Coprosa <span class="text-xs font-sans text-gray-500">Ltda.</span></span>
-                        <span class="text-[9px] sm:text-[10px] tracking-widest text-brand-600 uppercase font-semibold">Vidas que trabajan para la vida</span>
-                    </div>
+                    <span class="font-serif text-xl sm:text-2xl font-bold text-navy-900 tracking-tight">Hotel Coprosa</span>
                 </a>
 
                 <nav class="hidden md:flex items-center space-x-6 lg:space-x-8 font-medium text-sm text-gray-600">
@@ -119,18 +138,21 @@
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section id="inicio" class="hero-bg text-white py-16 sm:py-24 lg:py-32 flex items-center min-h-[75vh] lg:min-h-[85vh]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <!-- HERO SECTION ANIMADO -->
+    <section id="inicio" class="hero-container text-white py-16 sm:py-24 lg:py-32 flex items-center min-h-[80vh] lg:min-h-[88vh]">
+        <div class="hero-bg-animated"></div>
+        <div class="hero-overlay"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full hero-content">
             <div class="max-w-3xl">
-                <span class="inline-block bg-brand-500/90 text-white text-[11px] sm:text-xs font-semibold px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full uppercase tracking-widest mb-4">
+                <span class="inline-block bg-brand-500/90 text-white text-[11px] sm:text-xs font-semibold px-3.5 py-1.5 rounded-full uppercase tracking-widest mb-4">
                     Tu descanso, nuestra prioridad
                 </span>
-                <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6">
-                    Hotel Coprosa Ltda.
+                <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-4 sm:mb-6">
+                    Hotel Coprosa
                 </h1>
                 <p class="text-sm sm:text-lg text-gray-200 mb-6 sm:mb-8 font-light max-w-2xl">
-                    Confort, hospitalidad y la mejor atención en Repatriación. Disfruta de una experiencia inolvidable con habitaciones equipadas, aire acondicionado, desayuno incluido y estacionamiento seguro.
+                    Confort, hospitalidad y la mejor atención en Repatriación. Disfruta de una experiencia inolvidable con habitaciones equipadas, aire acondicionado split, desayuno incluido y estacionamiento seguro.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
                     <a href="#tarifas" class="w-full sm:w-auto text-center bg-brand-500 hover:bg-brand-600 text-white font-semibold px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl shadow-lg transition text-sm sm:text-base">
@@ -190,23 +212,23 @@
         </div>
     </section>
 
-    <!-- HABITACIONES (Con habitacion.png) -->
+    <!-- HABITACIONES -->
     <section id="habitaciones" class="py-12 sm:py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
-                <span class="text-brand-600 font-bold text-[10px] sm:text-xs uppercase tracking-widest">Nuestras Instalaciones Reales</span>
+                <span class="text-brand-600 font-bold text-[10px] sm:text-xs uppercase tracking-widest">Instalaciones Reales</span>
                 <h2 class="font-serif text-2xl sm:text-3xl font-bold text-navy-900 mt-2">Habitaciones Cómodas y Climatizadas</h2>
                 <div class="w-16 h-1 bg-brand-500 mx-auto mt-3 rounded-full"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
                 <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-md transition">
-                    <img src="habitacion.png" alt="Habitación Doble Real del Hotel Coprosa Ltda. en Repatriación" class="w-full h-56 object-cover" loading="lazy">
+                    <img src="habitacion.png" alt="Habitación Doble Real del Hotel Coprosa en Repatriación" class="w-full h-56 object-cover" loading="lazy">
                     <div class="p-6">
                         <span class="text-[10px] font-bold text-brand-600 uppercase tracking-widest">Foto Real</span>
-                        <h3 class="font-serif text-lg sm:text-xl font-bold text-navy-900 mb-2 mt-1">Habitación Doble / Confort</h3>
-                        <p class="text-gray-500 text-xs sm:text-sm mb-4">Equipada con aire acondicionado split, dos camas, cortinas blackout y excelente iluminación natural.</p>
-                        <button onclick="openBookingModal('Habitación Doble Real', 'Gs. 180.000')" class="w-full bg-navy-900 hover:bg-brand-500 text-white py-2.5 rounded-lg font-semibold text-xs transition">Consultar Reserva</button>
+                        <h3 class="font-serif text-lg sm:text-xl font-bold text-navy-900 mb-2 mt-1">Habitación Doble Confort</h3>
+                        <p class="text-gray-500 text-xs sm:text-sm mb-4">Equipada con aire acondicionado split, dos camas confortables, cortinas blackout e iluminación cálida.</p>
+                        <button onclick="openBookingModal('Habitación Doble Confort', 'Gs. 180.000')" class="w-full bg-navy-900 hover:bg-brand-500 text-white py-2.5 rounded-lg font-semibold text-xs transition">Consultar Reserva</button>
                     </div>
                 </div>
 
@@ -296,8 +318,8 @@
     <!-- FOOTER -->
     <footer class="bg-navy-900 text-white pt-10 pb-6 mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span class="font-serif text-xl sm:text-2xl font-bold text-white">Hotel Coprosa Ltda.</span>
-            <p class="text-gray-400 text-xs mt-1">Vidas que trabajan para la vida • Repatriación, Paraguay</p>
+            <span class="font-serif text-xl sm:text-2xl font-bold text-white">Hotel Coprosa</span>
+            <p class="text-gray-400 text-xs mt-1">Repatriación, Caaguazú, Paraguay</p>
             
             <div class="flex justify-center gap-6 mt-6 text-xs text-gray-400">
                 <button onclick="openModal('privacy-modal')" class="hover:text-brand-500 underline">Política de Privacidad</button>
@@ -305,7 +327,7 @@
             </div>
 
             <div class="border-t border-navy-800 mt-6 pt-6 text-[11px] text-gray-500">
-                <p>&copy; 2026 Hotel Coprosa Ltda. Todos los derechos reservados.</p>
+                <p>&copy; 2026 Hotel Coprosa. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
@@ -353,7 +375,7 @@
         <div class="bg-white rounded-2xl max-w-lg w-full p-6 relative shadow-2xl max-h-[80vh] overflow-y-auto text-xs text-gray-600 space-y-3">
             <button onclick="closeModal('privacy-modal')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"><i class="fas fa-times"></i></button>
             <h3 class="font-serif text-lg font-bold text-navy-900 mb-2">Política de Privacidad</h3>
-            <p>En Hotel Coprosa Ltda., protegemos sus datos personales. La información facilitada se utilizará exclusivamente para gestionar sus solicitudes de hospedaje.</p>
+            <p>En Hotel Coprosa, protegemos sus datos personales. La información facilitada se utilizará exclusivamente para gestionar sus solicitudes de hospedaje.</p>
         </div>
     </div>
 
