@@ -563,7 +563,7 @@
             const checkOut = document.getElementById('book-out').value;
             const phone = document.getElementById('book-phone').value;
 
-            const text = `Hola! Estoy interesado en hospedarme en el Hotel y quisiera consultarles algunas dudas. Habitación: ${currentSelectedRoom} (${currentSelectedPrice}) - Nombre: ${name} - Entrada: ${checkIn} - Salida: ${checkOut} - WhatsApp: ${phone}`;
+            const text = `Hola! Quiero hospedarme. Datos de reserva: Habitación ${currentSelectedRoom} (${currentSelectedPrice}) - Nombre: ${name} - Entrada: ${checkIn} - Salida: ${checkOut} - Tel: ${phone}`;
             
             closeModal('booking-modal');
             showToast('¡Redirigiendo a WhatsApp!', 'Abriendo chat para confirmar tu reserva...');
