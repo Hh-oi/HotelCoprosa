@@ -75,16 +75,16 @@
             overflow: hidden;
         }
 
-        .hero-bg-animated {
+        .hero-slider {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('inicio.png');
             background-size: cover;
             background-position: center;
-            animation: zoomSlow 22s infinite alternate ease-in-out;
+            transition: background-image 1.5s ease-in-out;
+            animation: zoomSlow 20s infinite alternate ease-in-out;
             z-index: 1;
         }
 
@@ -94,7 +94,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(180deg, rgba(26, 30, 36, 0.3) 0%, rgba(26, 30, 36, 0.55) 100%);
+            background: linear-gradient(180deg, rgba(26, 30, 36, 0.35) 0%, rgba(26, 30, 36, 0.65) 100%);
             z-index: 2;
         }
 
@@ -109,7 +109,7 @@
 
         @keyframes zoomSlow {
             0% { transform: scale(1); }
-            100% { transform: scale(1.10); }
+            100% { transform: scale(1.08); }
         }
 
         /* BOTÓN FLOTANTE WHATSAPP */
@@ -187,9 +187,9 @@
         </div>
     </header>
 
-    <!-- HERO SECTION (Con inicio.png animado) -->
+    <!-- HERO SECTION (PORTADA CON SLIDER AUTOMÁTICO DE FOTOS) -->
     <section id="inicio" class="hero-container text-white py-20 sm:py-32 flex items-center min-h-[82vh] lg:min-h-[90vh]">
-        <div class="hero-bg-animated"></div>
+        <div id="hero-slider" class="hero-slider" style="background-image: url('inicio.png');"></div>
         <div class="hero-overlay"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full hero-content">
@@ -215,7 +215,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN DE HABITACIONES & GALERÍA (Con habitacion.png restaurada) -->
+    <!-- SECCIÓN DE HABITACIONES -->
     <section id="habitaciones" class="py-16 sm:py-28 bg-terracota-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16">
@@ -229,7 +229,7 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Doble Confort (habitacion.png restaurada) -->
+                <!-- Doble Confort (habitacion.png) -->
                 <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 group hover:shadow-xl transition duration-300">
                     <div class="relative h-72 overflow-hidden">
                         <img src="habitacion.png" alt="Habitación Doble Confort Hotel Coprosa Repatriación" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
@@ -281,9 +281,8 @@
     <section id="tarifas" class="py-16 sm:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-                <span class="bg-terracota-100 text-terracota-700 font-bold text-[10px] uppercase tracking-widest px-3 py-1 rounded-full">Tarifas Transparentes</span>
-                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900 mt-3">Promoción Especial de Hospedaje</h2>
-                <p class="text-xs sm:text-sm text-gray-500 mt-2">Todas nuestras tarifas incluyen un delicioso desayuno preparado al momento.</p>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900">Tarifas de Hospedaje</h2>
+                <p class="text-xs sm:text-sm text-gray-500 mt-2">Todas nuestras opciones incluyen desayuno completo preparado al instante.</p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -377,7 +376,7 @@
         </div>
     </section>
 
-    <!-- UBICACIÓN -->
+    <!-- UBICACIÓN (CORREGIDA PARA REPATRIACIÓN) -->
     <section id="ubicacion" class="py-16 sm:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -385,7 +384,7 @@
                     <span class="text-terracota-500 font-bold text-xs uppercase tracking-[0.2em]">Ubicación Estratégica</span>
                     <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900 mt-2 mb-6">En el corazón de Repatriación</h2>
                     <p class="text-sm text-gray-600 font-light mb-6 leading-relaxed">
-                        Ubicados estratégicamente sobre la Segunda Línea Irrazabal Norte en Repatriación, Caaguazú, facilitando el acceso directo a los centros comerciales y cooperativas de la región.
+                        Ubicados estratégicamente sobre la Segunda Línea Irrazabal Norte en Repatriación, Caaguazú, facilitando el acceso directo a los centros comerciales y zonas principales.
                     </p>
                     <div class="space-y-4 text-xs sm:text-sm text-navy-800">
                         <div class="flex items-start gap-3">
@@ -399,55 +398,55 @@
                             <i class="fas fa-clock text-terracota-500 mt-1 text-base"></i>
                             <div>
                                 <strong>Recepción:</strong>
-                                <p class="text-gray-500 font-light">Atención continua y check-in fluido por WhatsApp</p>
+                                <p class="text-gray-500 font-light">Atención continua y reservas directas por WhatsApp</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="lg:col-span-7 h-80 sm:h-96 rounded-3xl overflow-hidden shadow-lg border border-gray-100 bg-gray-100">
-                    <iframe title="Mapa Hotel Coprosa" class="w-full h-full border-0" loading="lazy" allowfullscreen src="https://maps.google.com/maps?q=Repatriacion%20Caaguazu%20Paraguay&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+                    <iframe title="Mapa Hotel Coprosa Repatriación" class="w-full h-full border-0" loading="lazy" allowfullscreen src="https://maps.google.com/maps?q=Repatriacion%20Caaguazu%20Paraguay&t=&z=14&ie=UTF8&iwloc=&output=embed"></iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PREGUNTAS FRECUENTES (FAQ) -->
+    <!-- PREGUNTAS FRECUENTES (FAQ ESTILIZADO Y ELEGANTE) -->
     <section id="faq" class="py-16 sm:py-24 bg-terracota-50">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <span class="text-terracota-500 font-bold text-xs uppercase tracking-[0.2em]">Resolvemos tus dudas</span>
-                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900 mt-2">Preguntas Frecuentes</h2>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900">Información Útil para tu Estancia</h2>
+                <p class="text-xs sm:text-sm text-gray-500 mt-2">Respuestas rápidas sobre los servicios de nuestro hotel</p>
             </div>
 
             <div class="space-y-4">
                 <details class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 group">
                     <summary class="font-serif font-bold text-navy-900 cursor-pointer flex justify-between items-center text-sm sm:text-base">
-                        ¿El desayuno está incluido en todas las tarifas?
+                        ¿Todas las tarifas incluyen desayuno?
                         <i class="fas fa-chevron-down text-terracota-500 group-open:rotate-180 transition"></i>
                     </summary>
                     <p class="text-xs sm:text-sm text-gray-500 font-light mt-3 leading-relaxed">
-                        Sí, todas nuestras tarifas por noche (desde Gs. 130.000) incluyen desayuno completo preparado en el hotel.
+                        Sí, todas nuestras reservas por noche incluyen un completo desayuno preparado cada mañana.
                     </p>
                 </details>
 
                 <details class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 group">
                     <summary class="font-serif font-bold text-navy-900 cursor-pointer flex justify-between items-center text-sm sm:text-base">
-                        ¿Cómo realizo la confirmación de reserva?
+                        ¿Cómo funciona la reserva por esta web?
                         <i class="fas fa-chevron-down text-terracota-500 group-open:rotate-180 transition"></i>
                     </summary>
                     <p class="text-xs sm:text-sm text-gray-500 font-light mt-3 leading-relaxed">
-                        Al seleccionar tu habitación y fechas en esta web, la solicitud se enviará a nuestro WhatsApp oficial donde te confirmaremos la disponibilidad al instante.
+                        Eliges tu habitación y fechas deseada, y al hacer clic en confirmar, se abrirá un chat directo con nuestro WhatsApp oficial con tus datos listos.
                     </p>
                 </details>
 
                 <details class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 group">
                     <summary class="font-serif font-bold text-navy-900 cursor-pointer flex justify-between items-center text-sm sm:text-base">
-                        ¿Las habitaciones cuentan con aire acondicionado?
+                        ¿Cuenta el hotel con aire acondicionado y estacionamiento?
                         <i class="fas fa-chevron-down text-terracota-500 group-open:rotate-180 transition"></i>
                     </summary>
                     <p class="text-xs sm:text-sm text-gray-500 font-light mt-3 leading-relaxed">
-                        Todas nuestras habitaciones disponen de acondicionadores de aire tipo Split modernos y silenciosos.
+                        Así es. Cada habitación dispone de aire acondicionado tipo Split silencioso y contamos con amplio estacionamiento seguro.
                     </p>
                 </details>
             </div>
@@ -524,6 +523,18 @@
 
     <!-- JAVASCRIPT -->
     <script>
+        // CARRUSEL AUTOMÁTICO EN LA PORTADA CON TUS FOTOS REALES
+        const heroImages = ['inicio.png', 'habitacion.png', 'individual.jpeg', 'familiar.jpg'];
+        let currentImageIndex = 0;
+        const heroSliderElement = document.getElementById('hero-slider');
+
+        setInterval(() => {
+            currentImageIndex = (currentImageIndex + 1) % heroImages.length;
+            if(heroSliderElement) {
+                heroSliderElement.style.backgroundImage = `url('${heroImages[currentImageIndex]}')`;
+            }
+        }, 4000); // Cambia cada 4 segundos de forma suave
+
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
