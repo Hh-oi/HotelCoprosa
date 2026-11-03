@@ -83,8 +83,7 @@
             height: 100%;
             background-size: cover;
             background-position: center;
-            transition: background-image 1.5s ease-in-out;
-            animation: zoomSlow 20s infinite alternate ease-in-out;
+            transition: background-image 1.8s ease-in-out;
             z-index: 1;
         }
 
@@ -94,7 +93,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(180deg, rgba(26, 30, 36, 0.35) 0%, rgba(26, 30, 36, 0.65) 100%);
+            background: linear-gradient(180deg, rgba(26, 30, 36, 0.35) 0%, rgba(26, 30, 36, 0.6) 100%);
             z-index: 2;
         }
 
@@ -105,11 +104,6 @@
 
         .hero-text-shadow {
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
-        }
-
-        @keyframes zoomSlow {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.08); }
         }
 
         /* BOTÓN FLOTANTE WHATSAPP */
@@ -159,7 +153,6 @@
                     <a href="#tarifas" class="hover:text-terracota-500 transition">Tarifas</a>
                     <a href="#servicios" class="hover:text-terracota-500 transition">Servicios</a>
                     <a href="#ubicacion" class="hover:text-terracota-500 transition">Ubicación</a>
-                    <a href="#faq" class="hover:text-terracota-500 transition">FAQ</a>
                 </nav>
 
                 <div class="hidden md:flex items-center gap-4">
@@ -179,15 +172,14 @@
             <a href="#habitaciones" onclick="closeMobileMenu()" class="block py-2.5 border-b border-gray-100 text-navy-900">Habitaciones</a>
             <a href="#tarifas" onclick="closeMobileMenu()" class="block py-2.5 border-b border-gray-100 text-navy-900">Tarifas</a>
             <a href="#servicios" onclick="closeMobileMenu()" class="block py-2.5 border-b border-gray-100 text-navy-900">Servicios</a>
-            <a href="#ubicacion" onclick="closeMobileMenu()" class="block py-2.5 border-b border-gray-100 text-navy-900">Ubicación</a>
-            <a href="#faq" onclick="closeMobileMenu()" class="block py-2.5 text-navy-900">Preguntas Frecuentes</a>
+            <a href="#ubicacion" onclick="closeMobileMenu()" class="block py-2.5 text-navy-900">Ubicación</a>
             <a href="https://wa.me/595981353081?text=Hola!%20Estoy%20interesado%20en%20hospedarme%20en%20el%20Hotel%20y%20quisiera%20consultarles%20algunas%20dudas" target="_blank" class="w-full text-center bg-green-600 text-white font-semibold py-3 rounded-xl block mt-2">
                 <i class="fab fa-whatsapp"></i> Reservar por WhatsApp
             </a>
         </div>
     </header>
 
-    <!-- HERO SECTION (PORTADA CON SLIDER AUTOMÁTICO DE FOTOS) -->
+    <!-- HERO SECTION (PORTADA CON SLIDER SUAVE Y SIN ZOOM EXAGERADO) -->
     <section id="inicio" class="hero-container text-white py-20 sm:py-32 flex items-center min-h-[82vh] lg:min-h-[90vh]">
         <div id="hero-slider" class="hero-slider" style="background-image: url('inicio.png');"></div>
         <div class="hero-overlay"></div>
@@ -376,7 +368,7 @@
         </div>
     </section>
 
-    <!-- UBICACIÓN (CORREGIDA PARA REPATRIACIÓN) -->
+    <!-- UBICACIÓN -->
     <section id="ubicacion" class="py-16 sm:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -407,48 +399,6 @@
                 <div class="lg:col-span-7 h-80 sm:h-96 rounded-3xl overflow-hidden shadow-lg border border-gray-100 bg-gray-100">
                     <iframe title="Mapa Hotel Coprosa Repatriación" class="w-full h-full border-0" loading="lazy" allowfullscreen src="https://maps.google.com/maps?q=Repatriacion%20Caaguazu%20Paraguay&t=&z=14&ie=UTF8&iwloc=&output=embed"></iframe>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PREGUNTAS FRECUENTES (FAQ ESTILIZADO Y ELEGANTE) -->
-    <section id="faq" class="py-16 sm:py-24 bg-terracota-50">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900">Información Útil para tu Estancia</h2>
-                <p class="text-xs sm:text-sm text-gray-500 mt-2">Respuestas rápidas sobre los servicios de nuestro hotel</p>
-            </div>
-
-            <div class="space-y-4">
-                <details class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 group">
-                    <summary class="font-serif font-bold text-navy-900 cursor-pointer flex justify-between items-center text-sm sm:text-base">
-                        ¿Todas las tarifas incluyen desayuno?
-                        <i class="fas fa-chevron-down text-terracota-500 group-open:rotate-180 transition"></i>
-                    </summary>
-                    <p class="text-xs sm:text-sm text-gray-500 font-light mt-3 leading-relaxed">
-                        Sí, todas nuestras reservas por noche incluyen un completo desayuno preparado cada mañana.
-                    </p>
-                </details>
-
-                <details class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 group">
-                    <summary class="font-serif font-bold text-navy-900 cursor-pointer flex justify-between items-center text-sm sm:text-base">
-                        ¿Cómo funciona la reserva por esta web?
-                        <i class="fas fa-chevron-down text-terracota-500 group-open:rotate-180 transition"></i>
-                    </summary>
-                    <p class="text-xs sm:text-sm text-gray-500 font-light mt-3 leading-relaxed">
-                        Eliges tu habitación y fechas deseada, y al hacer clic en confirmar, se abrirá un chat directo con nuestro WhatsApp oficial con tus datos listos.
-                    </p>
-                </details>
-
-                <details class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 group">
-                    <summary class="font-serif font-bold text-navy-900 cursor-pointer flex justify-between items-center text-sm sm:text-base">
-                        ¿Cuenta el hotel con aire acondicionado y estacionamiento?
-                        <i class="fas fa-chevron-down text-terracota-500 group-open:rotate-180 transition"></i>
-                    </summary>
-                    <p class="text-xs sm:text-sm text-gray-500 font-light mt-3 leading-relaxed">
-                        Así es. Cada habitación dispone de aire acondicionado tipo Split silencioso y contamos con amplio estacionamiento seguro.
-                    </p>
-                </details>
             </div>
         </div>
     </section>
@@ -523,7 +473,7 @@
 
     <!-- JAVASCRIPT -->
     <script>
-        // CARRUSEL AUTOMÁTICO EN LA PORTADA CON TUS FOTOS REALES
+        // CARRUSEL PAUSADO Y SUAVE (CAMBIA CADA 7 SEGUNDOS SIN DEFORMAR IMÁGENES)
         const heroImages = ['inicio.png', 'habitacion.png', 'individual.jpeg', 'familiar.jpg'];
         let currentImageIndex = 0;
         const heroSliderElement = document.getElementById('hero-slider');
@@ -533,7 +483,7 @@
             if(heroSliderElement) {
                 heroSliderElement.style.backgroundImage = `url('${heroImages[currentImageIndex]}')`;
             }
-        }, 4000); // Cambia cada 4 segundos de forma suave
+        }, 7000); // 7 segundos para que sea pausado y placentero
 
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
